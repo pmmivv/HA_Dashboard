@@ -1,0 +1,408 @@
+  - title: New
+    path: new
+    theme: Light Soft UI
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - content: |
+              # Garage
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: switch.switch_portao
+                icon: 'mdi:garage-variant'
+                name: Garage Door
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:garage-open'
+                  icon_off: 'mdi:garage-variant'
+                  message_on: Open
+                  message_off: Close
+                  color: var(--yellow)
+              - entity: switch.switch_luz_quintal
+                icon: 'mdi:lighthouse'
+                name: Outside Light
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:lighthouse-on'
+                  icon_off: 'mdi:lighthouse'
+                  message_on: 'On'
+                  message_off: 'Off'
+                  color: var(--yellow)
+          - type: horizontal-stack
+            cards:
+              - entity: switch.switch_luz_loja
+                icon: 'mdi:lightbulb-multiple-off-outline'
+                name: Indoor Light
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:lightbulb-on-outline'
+                  icon_off: 'mdi:lightbulb-off'
+                  message_on: 'On'
+                  message_off: 'Off'
+                  color: var(--yellow)
+              - entity: sensor.temperatura_soutelo
+                name: Outside
+                template:
+                  - main_style
+                  - termometro
+                show_state: true
+                show_label: true
+                label: Temperature
+                type: 'custom:button-card'
+                variables:
+                  sensor_name: |
+                    [[[  return states['sensor.humidade_soutelo'].state; ]]]
+          - type: horizontal-stack
+            cards:
+              - entity: binary_sensor.movimento_garagem
+                name: Movement
+                template:
+                  - main_style
+                  - sensor
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:motion-sensor'
+                  icon_off: 'mdi:motion-sensor-off'
+                  message_on: Detected!
+                  message_off: 'Undetected '
+                  color: var(--blue)
+              - entity: binary_sensor.fogo
+                name: Fire
+                template:
+                  - main_style
+                  - sensor
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:fire-alert'
+                  icon_off: 'mdi:cloud-off-outline'
+                  message_on: Fire !!!
+                  message_off: Smoke Free
+                  color: var(--red)
+      - type: vertical-stack
+        cards:
+          - content: |
+              # Covers
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: cover.estore1
+                entity: cover.estore1
+                name: kitchen
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: cover.estore2
+                entity: cover.estore2
+                name: Living<br/>Room  1
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+              - variables:
+                  sensor_name: cover.estore3
+                entity: cover.estore3
+                name: Living<br/>Room  2
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: cover.estore4
+                entity: cover.estore4
+                name: Father
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+              - variables:
+                  sensor_name: cover.estore5
+                entity: cover.estore5
+                name: Mother
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+          - type: horizontal-stack
+            cards:
+              - entity: cover.estore6
+                name: Isa
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+              - variables:
+                  sensor_name: cover.estore7
+                entity: cover.estore7
+                name: John
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: cover.estore8
+                entity: cover.estore8
+                name: Office
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+              - variables:
+                  sensor_name: cover.estore9
+                entity: cover.estore9
+                name: Visiting<br/>Room
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: cover.estore10
+                entity: cover.estore10
+                name: Grandmother
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - estores
+                type: 'custom:button-card'
+      - type: vertical-stack
+        cards:
+          - content: |
+              # Water Controlls
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: input_boolean.input_b_agua_alterar
+                name: Automatic
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:arrow-decision-auto-outline'
+                  icon_off: 'mdi:arrow-decision-auto-outline'
+                  message_on: 'Yes'
+                  message_off: 'No'
+                  color: var(--yellow)
+              - entity: switch.switch_eletrov
+                icon: 'mdi:home-circle'
+                name: Input
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:fountain'
+                  icon_off: 'mdi:home-circle-outline'
+                  message_on: Borehole
+                  message_off: Main grid
+                  color: var(--blue)
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: input_number.input_n_agua_dia_de_alterar
+                  depends: input_boolean.input_b_agua_alterar
+                icon: 'mdi:calendar'
+                entity: input_number.input_n_agua_dia_de_alterar
+                name: Changing<br/>Day
+                template:
+                  - main_style
+                  - number
+                type: 'custom:button-card'
+      - type: vertical-stack
+        cards:
+          - content: |
+              # Corredor
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: switch.corredor_presenca
+                icon: 'mdi:garage-variant'
+                name: Presence<br/>Light
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:lightbulb-on-outline'
+                  icon_off: 'mdi:lightbulb-off'
+                  message_on: Ghosts away
+                  message_off: 'Off'
+                  color: var(--yellow)
+              - entity: sensor.temperatura_casa
+                name: Casa
+                template:
+                  - main_style
+                  - termometro
+                show_state: true
+                show_label: true
+                label: Termómetro
+                type: 'custom:button-card'
+                variables:
+                  sensor_name: |
+                    [[[  return states['sensor.humidade_casa'].state; ]]]
+      - cards:
+          - content: |
+              # Covers Automations
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - cards:
+              - entity: input_boolean.input_b_estores_abrir
+                name: Sunrise
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:weather-sunset-up'
+                  icon_off: 'mdi:weather-sunset-up'
+                  message_on: Open at sunrise
+                  message_off: Do not open
+                  color: var(--yellow)
+              - entity: input_boolean.input_b_estores_fechar
+                name: Sunset
+                template:
+                  - main_style
+                  - button_grid
+                  - botao
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:weather-sunset-down'
+                  icon_off: 'mdi:weather-sunset-down'
+                  message_on: Close at Sunset
+                  message_off: Do not Close
+                  color: var(--blue)
+            type: horizontal-stack
+          - type: horizontal-stack
+            cards:
+              - variables:
+                  sensor_name: input_datetime.input_dt_estores_abertura
+                  depends: input_boolean.input_b_estores_abrir
+                icon: 'mdi:clock'
+                entity: input_datetime.input_dt_estores_abertura
+                name: Time to<br/>Open Covers
+                template:
+                  - main_style
+                  - time
+                type: 'custom:button-card'
+              - variables:
+                  sensor_name: input_number.input_n_estores_offset_fecho
+                  depends: input_boolean.input_b_estores_fechar
+                icon: 'mdi:ruler-square-compass'
+                entity: input_number.input_n_estores_offset_fecho
+                name: Sun height<br/>to close
+                template:
+                  - main_style
+                  - number
+                type: 'custom:button-card'
+        type: vertical-stack

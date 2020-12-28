@@ -1,0 +1,429 @@
+button_card_templates:
+  main_style:
+    styles:
+      img_cell:
+        - padding-left: 25px
+        - padding-bottom: 15px
+        - justify-content: start
+      card:
+        - width: 'min(37vw, 170px)'
+        - height: 'min(35vw, 150px)'
+        - border-radius: 15px
+        - border-style: solid
+        - border-color: var(--primary-background-color)
+        - background-color: var(--primary-background-color)
+        - border-width: 2px
+        - margin: 3px 20px 3px 3px
+        - box-shadow: >
+            [[[ return '-4px -4px 8px rgba(255, 255, 255, .5), 5px 5px 8px
+            rgba(0, 0, 0, .09)' ]]]
+        - font-family: 'Google Sans, Roboto'
+        - font-weight: 500
+      name:
+        - justify-self: start
+        - font-size: 18px
+        - font-weight: 400
+        - align-self: center
+        - text-align: left
+        - padding-left: 15px
+        - opacity: 0.5
+        - color: var(--primary-text-color)
+      icon:
+        - color: var(--primary-icon-color)
+        - justify-self: start
+        - align-self: start
+        - opacity: 0.5
+      state:
+        - justify-self: start
+        - font-weight: normal
+        - font-size: 14px
+        - opacity: 0.6
+        - padding: 0 15px 5px
+        - color: var(--primary-text-color)
+        - opacity: 0.5
+      label:
+        - justify-self: start
+        - font-weight: normal
+        - font-size: 14px
+        - opacity: 0.6
+        - padding: 0 15px 5px
+        - color: var(--primary-text-color)
+        - opacity: 0.5
+  estores:
+    show_label: true;
+    show_state: false
+    variables:
+      sensor_name: ' '
+    label: |
+      [[[ return (states[entity.entity_id].attributes.current_position)+'%' ]]]
+    hold_action:
+      action: more-info
+    tap_action:
+      action: none
+    styles:
+      grid:
+        - grid-template-areas: '"i top" "i center" "n bottom" "l l"'
+        - grid-template-rows: 1fr 1fr 1fr min-content
+        - grid-template-columns: 2fr 1fr
+    custom_fields:
+      top:
+        card:
+          type: 'custom:button-card'
+          entity: null
+          icon: 'mdi:arrow-up-circle-outline'
+          template: botao2
+          tap_action:
+            action: call-service
+            service: cover.open_cover
+            service_data:
+              entity_id: '[[[ return entity.entity_id ]]]'
+      bottom:
+        card:
+          type: 'custom:button-card'
+          entity: null
+          icon: 'mdi:arrow-down-circle-outline'
+          template: botao2
+          tap_action:
+            action: call-service
+            service: cover.close_cover
+            service_data:
+              entity_id: '[[[ return entity.entity_id ]]]'
+      center:
+        card:
+          type: 'custom:button-card'
+          entity: null
+          icon: 'mdi:stop-circle-outline'
+          template: botao2
+          tap_action:
+            action: call-service
+            service: cover.stop_cover
+            service_data:
+              entity_id: '[[[ return entity.entity_id ]]]'
+  time:
+    variables:
+      sensor_name: ' '
+      depends: ' '
+    show_label: true;
+    show_state: false
+    state:
+      - styles:
+          card:
+            - border-width: 2px
+            - box-shadow: >
+                [[[ return 'inset -3px -3px 5px rgba(255, 255, 255), inset 3px
+                3px 5px rgba(0, 0, 0, .08)'  ]]]
+            - border-color: '#f7bf42'
+          icon:
+            - color: '#f7bf42'
+            - opacity: 1
+          name:
+            - color: '#e2ad37'
+              opacity: 1
+          label:
+            - color: '#e2ad37'
+              opacity: 1
+        value: |
+          [[[
+            if( variables.depends !== ' '){
+              if( states[variables.depends].state == 'on' )
+                  return entity.state;
+                else
+                  return "Fechado";
+            }
+            else
+             return "fechado";
+          ]]]
+    label: |
+      [[[ return states[variables.sensor_name].state ]]]
+    hold_action:
+      action: none
+    tap_action:
+      action: more-info
+    styles:
+      grid:
+        - grid-template-areas: '"i top" "i center" "n bottom" "l l"'
+        - grid-template-rows: 1fr 1fr 1fr min-content
+        - grid-template-columns: 2fr 1fr
+  number:
+    variables:
+      sensor_name: ' '
+      depends: ' '
+    show_label: true;
+    show_state: false
+    state:
+      - styles:
+          card:
+            - border-width: 2px
+            - box-shadow: >
+                [[[ return 'inset -3px -3px 5px rgba(255, 255, 255), inset 3px
+                3px 5px rgba(0, 0, 0, .08)'  ]]]
+            - border-color: '#f7bf42'
+          icon:
+            - color: '#f7bf42'
+            - opacity: 1
+          name:
+            - color: '#e2ad37'
+              opacity: 1
+          label:
+            - color: '#e2ad37'
+              opacity: 1
+        value: |
+          [[[
+            if( variables.depends !== ' '){
+              if( states[variables.depends].state == 'on' )
+                  return entity.state;
+                else
+                  return "Fechado";
+            }
+            else
+             return "fechado";
+          ]]]
+    label: |
+      [[[ return Math.trunc(states[variables.sensor_name].state) ]]]
+    hold_action:
+      action: more-info
+    tap_action:
+      action: none
+    styles:
+      grid:
+        - grid-template-areas: '"i top" "i center" "n bottom" "l l"'
+        - grid-template-rows: 1fr 1fr 1fr min-content
+        - grid-template-columns: 2fr 1fr
+    custom_fields:
+      top:
+        card:
+          type: 'custom:button-card'
+          entity: null
+          icon: 'mdi:arrow-up-circle-outline'
+          template: botao2
+          tap_action:
+            action: call-service
+            service: input_number.increment
+            service_data:
+              entity_id: '[[[ return variables.sensor_name ]]]'
+      bottom:
+        card:
+          type: 'custom:button-card'
+          entity: null
+          icon: 'mdi:arrow-down-circle-outline'
+          template: botao2
+          tap_action:
+            action: call-service
+            service: input_number.decrement
+            service_data:
+              entity_id: '[[[ return variables.sensor_name ]]]'
+  button_grid:
+    size: 30%
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+    styles:
+      grid:
+        - grid-template-areas: '"i" "n" "s" "l"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: 1fr min-content min-content min-content
+  botao_extendido:
+    state:
+      - value: 'on'
+        operator: ==
+        styles:
+          card:
+            - box-shadow: |
+                [[[ return states['sun.sun'].state == 'below_horizon'
+                  ? 'inset -4px -4px 5px rgba(60, 60, 60, .6), inset 4px 4px 5px rgba(0, 0, 0, .5)'
+                  : 'inset -3px -3px 5px rgba(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, .08)';
+                ]]]
+          icon:
+            - color: var(--paper-item-icon-active-color)
+    styles:
+      card:
+        - width: 80px
+        - height: 80px
+        - margin: 10px
+        - border-radius: 15px
+        - box-shadow: |
+            [[[ return states['sun.sun'].state == 'below_horizon'
+              ? '-5px -5px 10px rgba(50, 50, 50, .2), 6px 6px 10px rgba(0, 0, 0, .08)'
+              : '-5px -5px 8px rgba(255, 255, 255, .5), 5px 5px 8px rgba(0, 0, 0, .03)';
+            ]]]
+        - background-color: var(--primary-background-color)
+      tap_action:
+        action: toggle
+        haptic: light
+      hold_action:
+        action: more-info
+        haptic: medium
+  botao2:
+    size: 70%
+    show_icon: true
+    show_name: false
+    styles:
+      card:
+        - width: 30px
+        - height: 30px
+        - margin: 5px
+        - border-radius: 20px
+        - box-shadow: >
+            [[[ return '-4px -4px 8px rgba(255, 255, 255, .5), 5px 5px 8px
+            rgba(0, 0, 0, .03)'; ]]]
+        - background-color: var(--primary-background-color)
+      icon:
+        - color: '#b473f5'
+          opacity: 1
+  sensor:
+    variables:
+      icon_on: ' '
+      icon_off: ' '
+      message_on: ' '
+      message_off: ' '
+      color: ' '
+    size: 30%
+    hold_action:
+      action: more-info
+    show_label: true
+    show_state: false
+    state:
+      - value: 'on'
+        label: '[[[ return variables.message_on ]]]'
+        icon: '[[[ return variables.icon_on ]]]'
+        styles:
+          card:
+            - border-width: 2px
+            - box-shadow: >
+                [[[ return 'inset -3px -3px 5px rgba(255, 255, 255), inset 3px
+                3px 5px rgba(0, 0, 0, .08)'  ]]]
+            - border-color: '[[[ return variables.color ]]]'
+          icon:
+            - color: '[[[ return variables.color ]]]'
+            - opacity: 1
+          name:
+            - color: '[[[ return variables.color ]]]'
+              opacity: 1
+          label:
+            - color: '[[[ return variables.color ]]]'
+              opacity: 1
+      - value: 'off'
+        label: '[[[ return variables.message_off ]]]'
+        icon: '[[[ return variables.icon_off ]]]'
+    styles:
+      card:
+        - height: 'min(30vw, 90px)'
+      grid:
+        - grid-template-areas: '"n i" "n i" "l i" '
+        - grid-template-columns: 2fr 1fr
+        - grid-template-rows: 1fr 1fr 1fr
+  termometro:
+    size: 50%
+    variables:
+      sensor_name: ' '
+    state:
+      - value: 18
+        icon: 'mdi:thermometer-low'
+        operator: <
+        styles:
+          card:
+            - border-color: '#59bde2'
+            - color: '#59bde2'
+            - opacity: 1
+          icon:
+            - color: '#59bde2'
+          state:
+            - color: '#59bde2'
+      - value: 27
+        icon: 'mdi:thermometer'
+        operator: <
+        styles:
+          card:
+            - border-color: '#f79a0e'
+            - color: '#f79a0e'
+            - opacity: 1
+          icon:
+            - color: '#f79a0e'
+          state:
+            - color: '#f79a0e'
+      - value: 70
+        icon: 'mdi:thermometer-high'
+        operator: <
+        styles:
+          card:
+            - border-color: '#ec3967'
+            - color: '#ec3967'
+            - opacity: 1
+          icon:
+            - color: '#ec3967'
+          state:
+            - color: '#ec3967'
+    custom_fields:
+      teste: |
+        [[[
+          return `<ha-icon
+            icon="mdi:water-percent"
+            style="width: 17px; height: 17px;">
+            </ha-icon>${variables.sensor_name}%`
+        ]]]
+    styles:
+      custom_fields:
+        teste:
+          - justify-self: right
+          - font-weight: normal
+          - font-size: 16px
+          - opacity: 0.6
+          - padding-right: 5px
+          - padding-bottom: 20px
+          - color: var(--primary-text-color)
+      card:
+        - box-shadow: >
+            [[[ return 'inset -3px -3px 5px rgba(255, 255, 255, .65), inset 3px
+            3px 5px rgba(0, 0, 0, .2)' ]]]
+      icon:
+        - opacity: 1
+      grid:
+        - grid-template-areas: '"i s" "i teste" "n n" "l l"'
+        - grid-template-columns: 1fr 1fr
+        - grid-template-rows: 1fr 1fr min-content min-content
+      state:
+        - font-size: 18px
+        - font-weight: 400
+        - justify-self: right
+        - opacity: 1
+        - padding-right: 5px
+        - align-self: flex-end
+      label:
+        - justify-self: start
+        - font-weight: normal
+        - font-size: 14px
+        - opacity: 0.6
+        - padding: 0 15px 5px
+  botao:
+    variables:
+      icon_on: ' '
+      icon_off: ' '
+      message_on: ' '
+      message_off: ' '
+      color: ' '
+    show_label: true
+    show_state: false
+    state:
+      - value: 'on'
+        label: '[[[ return variables.message_on ]]]'
+        icon: '[[[ return variables.icon_on ]]]'
+        styles:
+          card:
+            - border-width: 2px
+            - box-shadow: >
+                [[[ return 'inset -3px -3px 5px rgba(255, 255, 255), inset 3px
+                3px 5px rgba(0, 0, 0, .08)'  ]]]
+            - border-color: '[[[ return variables.color ]]]'
+          icon:
+            - color: '[[[ return variables.color ]]]'
+            - opacity: 1
+          name:
+            - color: '[[[ return variables.color ]]]'
+              opacity: 1
+          label:
+            - color: '[[[ return variables.color ]]]'
+              opacity: 1
+      - value: 'off'
+        label: '[[[ return variables.message_off ]]]'
+        icon: '[[[ return variables.icon_off ]]]'
