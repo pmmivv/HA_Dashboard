@@ -3,14 +3,14 @@
 ![alt text](https://github.com/pmmivv/HA_Dashboard/blob/main/images/Dashboard.png?raw=true)
 
 ## Instalation
-You wil need to instal this via [HACS](https://hacs.xyz/docs/installation/manual)
-- [Card Mode](https://github.com/thomasloven/lovelace-card-mod)
+You will need to install this via [HACS](https://hacs.xyz/docs/installation/manual)
+- [Card Mod](https://github.com/thomasloven/lovelace-card-mod)
 - [Button Card](https://github.com/custom-cards/button-card)
 
-And @KTibow soft-ui-theme
+And @KTibow's soft-ui-theme
 - [Soft UI Theme](https://github.com/KTibow/lovelace-light-soft-ui-theme)
 
-Then add the content of `button_card_templates.yaml` to your main lovelace configuration
+Then add the content of `button_card_templates.yaml` to your main Lovelace configuration
 
 ---
 ## Minor tweeks
@@ -23,7 +23,7 @@ Colors:
   yellow: "#f7bf42"
   blue: "#46bdea"
 ```
-To set colums, replace de `card-mod-view-yaml` for this:
+To set colums, replace `card-mod-view-yaml` with this:
 ```yaml
   card-mod-view-yaml: |
     hui-masonry-view$: |
@@ -34,7 +34,7 @@ To set colums, replace de `card-mod-view-yaml` for this:
 ```
 
 ## The Idea
-I just wanna have something easy to create and customize, so, my idea was to create this as blocks (defined as button card template) and then call them on the button card
+I want to have something easy to create and customize, so my idea was to create this as blocks (defined as button card template) and then call them on each button card
 
 ```yaml
 entity: switch.switch_portao
@@ -54,15 +54,15 @@ variables:
 ## Templates
 
   - main_style - This defines card dimentions
-  - button - Used for the majority of button with On and Off states
+  - button - Used for the majority of buttons with On and Off states
   - sensor - Used to report sensor state
   - number - Used for input_number
   - temperature - Used for temperature sensors
   - time - Used for input_datetime
-  - cover - Used for control covers
+  - cover - Used to control covers
 
 ## Variables
-Allmost every sensor state template have variables to define icons and states
+Almost every sensor state template have variables to define icons and states
 
   - icon_on: 'mdi:garage-open'
   - icon_off: 'mdi:garage-variant'
@@ -71,7 +71,7 @@ Allmost every sensor state template have variables to define icons and states
   - color: var(--yellow)
 
 ## Bugs and optimizations
-This is work in progress so expect some bugs and some things that can be improve.
+This is work in progress so expect some bugs and some things that can be improved.
 
 
 
