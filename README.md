@@ -1,3 +1,3 @@
 # HA_Dashboar
 
-![alt text](https://github.com/pmmivv/HA_Dashboar/blob/image/dashboard.jpg?raw=true)
+![alt text](https://github.com/pmmivv/HA_Dashboar/blob/main/images/Dashboard.png?raw=true)
