@@ -36,7 +36,6 @@ I just wanna have something easy to create and customize, so, my idea was to cre
 
 ```yaml
 entity: switch.switch_portao
-icon: 'mdi:garage-variant'
 name: Garage Door
 template:
   - main_style
@@ -54,7 +53,6 @@ variables:
 ## Templates
 
   - main_style - This defines card dimentions
-  - button_grid - This defines the button grid
   - botao - Used for the majority of button with On and Off states
   - sensor - Used to report sensor state
   - number - Used for input_number
