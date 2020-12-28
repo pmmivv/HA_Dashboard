@@ -53,10 +53,10 @@ variables:
 ## Templates
 
   - main_style - This defines card dimentions
-  - botao - Used for the majority of button with On and Off states
+  - button - Used for the majority of button with On and Off states
   - sensor - Used to report sensor state
   - number - Used for input_number
-  - termometro - Used for temperature sensors
+  - temperature - Used for temperature sensors
   - time - Used for input_datetime
   - estores - Used for control covers
 
@@ -69,6 +69,8 @@ Allmost every sensor state template have variables to define icons and states
   - message_off: Close
   - color: var(--yellow)
 
+## Bugs and optimizations
+This is work in progress so expect some bugs and some things that can be improve.
 
 
 
