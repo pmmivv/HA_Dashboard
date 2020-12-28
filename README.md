@@ -4,9 +4,11 @@
 
 ## Instalation
 You wil need to instal this via [HACS](https://hacs.xyz/docs/installation/manual)
-- [Soft UI Theme](https://github.com/N-l1/lovelace-soft-ui)
 - [Card Mode](https://github.com/thomasloven/lovelace-card-mod)
 - [Button Card](https://github.com/custom-cards/button-card)
+
+And @KTibow soft-ui-theme
+- [Soft UI Theme](https://https://github.com/KTibow/lovelace-light-soft-ui-theme)
 
 Then add the content of `button_card_templates.yaml` to your main lovelace configuration
 
