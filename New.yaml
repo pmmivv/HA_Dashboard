@@ -26,12 +26,10 @@
           - type: horizontal-stack
             cards:
               - entity: switch.switch_portao
-                icon: 'mdi:garage-variant'
                 name: Garage Door
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:garage-open'
@@ -40,12 +38,10 @@
                   message_off: Close
                   color: var(--yellow)
               - entity: switch.switch_luz_quintal
-                icon: 'mdi:lighthouse'
                 name: Outside Light
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:lighthouse-on'
@@ -56,12 +52,10 @@
           - type: horizontal-stack
             cards:
               - entity: switch.switch_luz_loja
-                icon: 'mdi:lightbulb-multiple-off-outline'
                 name: Indoor Light
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:lightbulb-on-outline'
@@ -73,7 +67,7 @@
                 name: Outside
                 template:
                   - main_style
-                  - termometro
+                  - temperature
                 show_state: true
                 show_label: true
                 label: Temperature
@@ -129,54 +123,44 @@
             type: markdown
           - type: horizontal-stack
             cards:
-              - variables:
-                  sensor_name: cover.estore1
-                entity: cover.estore1
+              - entity: cover.estore1
                 name: kitchen
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
           - type: horizontal-stack
             cards:
-              - variables:
-                  sensor_name: cover.estore2
-                entity: cover.estore2
+              - entity: cover.estore2
                 name: Living<br/>Room  1
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
-              - variables:
-                  sensor_name: cover.estore3
-                entity: cover.estore3
+              - entity: cover.estore3
                 name: Living<br/>Room  2
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
           - type: horizontal-stack
             cards:
-              - variables:
-                  sensor_name: cover.estore4
-                entity: cover.estore4
+              - entity: cover.estore4
                 name: Father
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
-              - variables:
-                  sensor_name: cover.estore5
-                entity: cover.estore5
+              - entity: cover.estore5
                 name: Mother
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
           - type: horizontal-stack
             cards:
@@ -185,47 +169,39 @@
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
-              - variables:
-                  sensor_name: cover.estore7
-                entity: cover.estore7
+              - entity: cover.estore7
                 name: John
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
           - type: horizontal-stack
             cards:
-              - variables:
-                  sensor_name: cover.estore8
-                entity: cover.estore8
+              - entity: cover.estore8
                 name: Office
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
-              - variables:
-                  sensor_name: cover.estore9
-                entity: cover.estore9
+              - entity: cover.estore9
                 name: Visiting<br/>Room
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
           - type: horizontal-stack
             cards:
-              - variables:
-                  sensor_name: cover.estore10
-                entity: cover.estore10
+              - entity: cover.estore10
                 name: Grandmother
                 icon: 'mdi:blinds'
                 template:
                   - main_style
-                  - estores
+                  - cover
                 type: 'custom:button-card'
       - type: vertical-stack
         cards:
@@ -253,8 +229,7 @@
                 name: Automatic
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:arrow-decision-auto-outline'
@@ -263,12 +238,10 @@
                   message_off: 'No'
                   color: var(--yellow)
               - entity: switch.switch_eletrov
-                icon: 'mdi:home-circle'
                 name: Input
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:fountain'
@@ -311,12 +284,10 @@
           - type: horizontal-stack
             cards:
               - entity: switch.corredor_presenca
-                icon: 'mdi:garage-variant'
                 name: Presence<br/>Light
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:lightbulb-on-outline'
@@ -328,7 +299,7 @@
                 name: Casa
                 template:
                   - main_style
-                  - termometro
+                  - temperature
                 show_state: true
                 show_label: true
                 label: Termómetro
@@ -360,8 +331,7 @@
                 name: Sunrise
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:weather-sunset-up'
@@ -373,8 +343,7 @@
                 name: Sunset
                 template:
                   - main_style
-                  - button_grid
-                  - botao
+                  - button
                 type: 'custom:button-card'
                 variables:
                   icon_on: 'mdi:weather-sunset-down'
