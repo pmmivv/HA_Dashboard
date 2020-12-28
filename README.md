@@ -11,7 +11,7 @@ You wil need to instal this via [HACS](https://hacs.xyz/docs/installation/manual
 Then add the content of `button_card_templates.yaml` to your main lovelace configuration
 
 ---
-# Minor tweeks
+## Minor tweeks
 
 Change this at `/config/themes/light-soft-ui/light-soft-ui.yaml`
 
@@ -58,7 +58,7 @@ variables:
   - number - Used for input_number
   - temperature - Used for temperature sensors
   - time - Used for input_datetime
-  - estores - Used for control covers
+  - cover - Used for control covers
 
 ## Variables
 Allmost every sensor state template have variables to define icons and states
