@@ -1,6 +1,6 @@
 # Home Assistant Soft UI Dashboard
 
-![alt text](https://github.com/pmmivv/HA_Dashboar/blob/main/images/Dashboard.png?raw=true)
+![alt text](https://github.com/pmmivv/HA_Dashboard/blob/main/images/Dashboard.png?raw=true)
 
 # Instalation
 You wil need to instal this via [HACS](https://hacs.xyz/docs/installation/manual)
