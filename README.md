@@ -39,8 +39,7 @@ entity: switch.switch_portao
 name: Garage Door
 template:
   - main_style
-  - button_grid
-  - botao
+  - button
 type: 'custom:button-card'
 variables:
   icon_on: 'mdi:garage-open'
