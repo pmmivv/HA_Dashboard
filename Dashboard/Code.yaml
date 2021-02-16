@@ -1,4 +1,4 @@
-´´´yaml
+```yaml
   - title: Examples
     path: examples
     theme: Light Soft UI
@@ -315,4 +315,4 @@
                   color: var(--red-pink)
         type: vertical-stack
 
-´´´
+```
