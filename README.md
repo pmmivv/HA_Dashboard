@@ -70,6 +70,25 @@ Almost every sensor state template have variables to define icons and states
   - message_off: Close
   - color: var(--yellow)
 
+## Examples
+### Temperature
+![alt text](https://github.com/pmmivv/HA_Dashboard/blob/main/images/Temperature.png?raw=true)
+```yaml
+entity: sensor.home_temperature
+name: Inside
+template:
+  - main_style
+  - temperature
+show_state: true
+show_label: true
+label: Temperature
+type: 'custom:button-card'
+variables:
+  sensor_name: |
+    [[[  return states['sensor.home_humidity'].state; ]]]
+```
+
+
 ## Bugs and optimizations
 This is work in progress so expect some bugs and some things that can be improved.
 
