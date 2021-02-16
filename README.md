@@ -72,7 +72,7 @@ Almost every sensor state template have variables to define icons and states
 
 ## Examples
 ### Temperature
-![alt text](https://github.com/pmmivv/HA_Dashboard/blob/main/images/Temperature.png?raw=true)
+![alt text](https://github.com/pmmivv/HA_Dashboard/blob/main/images/Temperature.png?raw=true){:height="50%" width="50%"}
 ```yaml
 entity: sensor.home_temperature
 name: Inside
