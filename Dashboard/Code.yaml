@@ -1,0 +1,318 @@
+´´´yaml
+  - title: Examples
+    path: examples
+    theme: Light Soft UI
+    badges: []
+    cards:
+      - cards:
+          - content: |
+              # Button Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: input_boolean.b_garagem_fechar_portao_auto
+                name: Close garage<br/>door auto
+                template:
+                  - main_style
+                  - button
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:arrow-decision-auto-outline'
+                  icon_off: 'mdi:arrow-decision-auto-outline'
+                  message_on: 'Yes'
+                  message_off: 'No'
+                  color: var(--green)
+              - entity: input_boolean.b_ligth_temp_testes
+                name: Close garage<br/>door auto
+                template:
+                  - main_style
+                  - button
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:arrow-decision-auto-outline'
+                  icon_off: 'mdi:close'
+                  message_on: 'Yes'
+                  message_off: 'No'
+                  color: var(--green)
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Sensor Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: input_boolean.b_garagem_fechar_portao_auto
+                name: Night<br/>alarm
+                template:
+                  - main_style
+                  - sensor
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:shield-lock-outline'
+                  icon_off: 'mdi:shield-off-outline'
+                  message_on: 'On'
+                  message_off: 'Off'
+                  color: var(--green)
+              - entity: input_boolean.b_garagem_presenca
+                name: Night<br/>alarm
+                template:
+                  - main_style
+                  - sensor
+                type: 'custom:button-card'
+                variables:
+                  icon_on: 'mdi:shield-lock-outline'
+                  icon_off: 'mdi:shield-off-outline'
+                  message_on: 'On'
+                  message_off: 'Off'
+                  color: var(--green)
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Cover Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: cover.estore1
+                name: Living<br/>room
+                icon: 'mdi:blinds'
+                template:
+                  - main_style
+                  - cover
+                type: 'custom:button-card'
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Select Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - icon: 'mdi:palette'
+                entity: input_select.varanda
+                name: Color
+                template:
+                  - main_style
+                  - select
+                  - color
+                type: 'custom:button-card'
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Number Select Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - icon: 'mdi:brightness-percent'
+                entity: input_number.varanda
+                name: Bright
+                template:
+                  - main_style
+                  - number
+                type: 'custom:button-card'
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Sensor Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: sensor.ups_consumo
+                name: Ups
+                template:
+                  - main_style
+                  - sensor_number
+                type: 'custom:button-card'
+                variables:
+                  icon: 'mdi:car-battery'
+                  color: var(--blue)
+                  default_status: 'on'
+              - entity: sensor.ups_consumo
+                name: Ups
+                template:
+                  - main_style
+                  - sensor_number
+                type: 'custom:button-card'
+                variables:
+                  icon: 'mdi:car-battery'
+                  default_status: 'off'
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Temperature Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: sensor.temperatura_casa
+                name: Inside
+                template:
+                  - main_style
+                  - temperature
+                show_state: true
+                show_label: true
+                label: Temperature
+                type: 'custom:button-card'
+                variables:
+                  sensor_name: |
+                    [[[  return states['sensor.humidade_casa'].state; ]]]
+              - entity: sensor.temperatura_soutelo
+                name: Outside
+                template:
+                  - main_style
+                  - temperature
+                show_state: true
+                show_label: true
+                label: Temperature
+                type: 'custom:button-card'
+                variables:
+                  sensor_name: |
+                    [[[  return states['sensor.humidade_soutelo'].state; ]]]
+        type: vertical-stack
+      - cards:
+          - content: |
+              # Theme Example
+            style:
+              .: |
+                ha-card {
+                  --paper-card-background-color: none !important;
+                  box-shadow: none !important;
+                }
+              ha-markdown:
+                $: |
+                  h1 {
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-family: Helvetica;
+                    letter-spacing: '-0.01em';
+                    text-align: center;
+                  }
+            type: markdown
+          - type: horizontal-stack
+            cards:
+              - entity: input_boolean.natal
+                icon: 'mdi:pine-tree'
+                template:
+                  - button_little
+                type: 'custom:button-card'
+                variables:
+                  color: var(--green-yellow)
+              - entity: input_boolean.halloween
+                icon: 'mdi:halloween'
+                template:
+                  - button_little
+                type: 'custom:button-card'
+                variables:
+                  color: var(--orange)
+              - entity: input_boolean.namorados
+                icon: 'mdi:heart-multiple-outline'
+                template:
+                  - button_little
+                type: 'custom:button-card'
+                variables:
+                  color: var(--red-pink)
+        type: vertical-stack
+
+´´´
